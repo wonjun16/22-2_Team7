@@ -42,6 +42,12 @@
     <ClCompile Include="compare_with_checksum.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="open_file.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="change_data.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data_structure.h">
@@ -69,6 +75,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="sort_tag_order.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="file_open.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

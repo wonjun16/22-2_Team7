@@ -18,7 +18,7 @@ typedef struct data {
 
 } people;
 
-typedef struct data {
+typedef struct LL_data {
 
 	int tag;
 	char data_registered[20];
@@ -27,20 +27,20 @@ typedef struct data {
 	int age;
 	char organization[30];
 	char job[15];
-	struct data* next;
+	struct LL_data* next;
 
 } LL_people;
 
-LL_people* createNode(int tag, char data_registered[], char fee_paid[], char name[], int age, char organization[], char job[]) {
-	data* node = (data*)malloc(sizeof(data));
-	node->tag=tag;
-	strcpy(node->data_registered, data_registered);
-	strcpy(node->fee_paid, fee_paid);
-	strcpy(node->name, name);
-	node->age = age;
-	strcpy(node->organization, organization);
-	strcpy(node->job, job);
-
-	node->next = NULL;
-	return node;
-}
+//LL_people* createNode(int tag, char data_registered[], char fee_paid[], char name[], int age, char organization[], char job[]) {
+//	LL_people* node = (LL_people*)malloc(sizeof(LL_people));
+//	node->tag=tag;
+//	strcpy(node->data_registered, data_registered);
+//	strcpy(node->fee_paid, fee_paid);
+//	strcpy(node->name, name);
+//	node->age = age;
+//	strcpy(node->organization, organization);
+//	strcpy(node->job, job);
+//
+//	node->next = NULL;
+//	return node;
+//}
