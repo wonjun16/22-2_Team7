@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 /*
-1. linked list, sturct array »ý¼º
+1. linked list, sturct array Â»Ã½Â¼Âº
 */
 
 typedef struct data {
@@ -11,10 +11,10 @@ typedef struct data {
 	int tag;
 	char data_registered[20];
 	char fee_paid[10];
-	char name[50];
+	char name[25];
 	int age;
-	char organization[50];
-	char job[50];
+	char organization[30];
+	char job[15];
 
 } people;
 
@@ -23,10 +23,10 @@ typedef struct data {
 	int tag;
 	char data_registered[20];
 	char fee_paid[10];
-	char name[50];
+	char name[25];
 	int age;
-	char organization[50];
-	char job[50];
+	char organization[30];
+	char job[15];
 	struct data* next;
 
 } LL_people;
