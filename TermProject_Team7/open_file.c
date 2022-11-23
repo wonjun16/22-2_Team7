@@ -1,28 +1,48 @@
-/*new_data파일 읽어서 structure array, linked list에 저장
-*/
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include "data_structure.h"
+#include <stdlib.h>
+#include <string.h>
 
-int index = 0;
+struct DATA {
 
-void openedFILE_array(people PEOPLE[], char inputFileName[]) {
-	FILE* inputFILE;
-	inputFILE = fopen(inputFileName, "r");
-	if (inputFILE == NULL) {
-		printf("Fail to open file.\n");
+	int tag;	//registration number-unique integer
+	char data_registered[20];	//yyyy-mm-dd
+	char fee_paid[10];	//"yes" or "no"
+	char name[25];	//char[25]
+	int age;	//integer
+	char organization[30];	//company or university; char[30]
+	char job[15];	//student, professor, staff, executive, engineer, marketer; char[15]
+
+};
+
+struct NODE {
+
+	int tag;	//registration number-unique integer
+	char data_registered[20];	//yyyy-mm-dd
+	char fee_paid[10];	//"yes" or "no"
+	char name[25];	//char[25]
+	int age;	//integer
+	char organization[30];	//company or university; char[30]
+	char job[15];	//student, professor, staff, executive, engineer, marketer; char[15]
+	struct NODE* next;
+
+};
+
+struct NODE* createNewNode(struct NODE* head, struct DATA* data, int i) {
+	struct NODE* newNode = (struct NODE*)malloc(sizeof(struct NODE));
+	if (newNode == NULL) {
+		printf("newNode == NULL\n");
 		exit(1);
 	}
-	while (fscanf(inputFILE, "%d %s %s %s %d %s %s", &(PEOPLE[index].tag), PEOPLE[index].data_registered, PEOPLE[index].fee_paid,
-		PEOPLE[index].name, &(PEOPLE[index].age), PEOPLE[index].organization, PEOPLE[index].job)!=EOF) {
-		index++;
-	}
-}
+	newNode->tag = data[i].tag;
+	strcpy(newNode->data_registered, data[i].data_registered);
+	strcpy(newNode->fee_paid, data[i].fee_paid);
+	strcpy(newNode->name, data[i].name);
+	newNode->age = data[i].age;
+	strcpy(newNode->organization, data[i].organization);
+	strcpy(newNode->job, data[i].job);
 
-//LL_people* openedFILE_LL() {
-//	people* copyPEOPLE = openedFILE_array();
-//	LL_people* head;
-//	for (int i = 0; i <= index; i++) {
-//		//createNode();
-//	}
-//}
+	newNode->next = NULL;
+
+	return newNode;
+}
