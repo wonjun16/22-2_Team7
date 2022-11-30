@@ -1,4 +1,35 @@
 /*
-3. °¢ ÀÚ·á±¸Á¶¿¡ ´ëÇØ gachon university ¼­Ä¡
-linked list, sturct array¿¡ ´ëÇØ °¢°¢ ±¸Çö
+3. ê° ìë£Œêµ¬ì¡°ì— ëŒ€í•´ gachon university ì„œì¹˜
+linked list, sturct arrayì— ëŒ€í•´ ê°ê° êµ¬í˜„
 */
+
+//---- search gachon
+void searchGachonArray(PEOPLE* people) {
+    printf("Search Gachon University using Array \n");
+    int i = 0;
+    while (i < 100) {
+        if (strcmp((people + i)->organization, "Gachon University") == NULL) { //if organization is 'gachon university', data output
+            printPeople(*(people + i));
+        }
+        i++;
+    }
+    printf("\n");
+}
+
+void searchGachonLinkedList(NODE* head) {
+    NODE* tmp = head->next; //cursor
+    printf("Search Gachon University using LinkedList \n");
+    while (tmp) {
+        if (strcmp(tmp->people.organization, "Gachon University") == NULL) { //if organization is 'gachon university', data output
+            printPeople(tmp->people);
+        }
+        tmp = tmp->next;
+    }
+    printf("\n");
+}
+
+//main
+
+int main(){
+   searchGachonArray(peoples);
+   searchGachonLinkedList(head);
