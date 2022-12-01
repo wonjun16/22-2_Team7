@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,12 +42,10 @@ struct node* create_Node(PEOPLE* people) {
 
     return newNode;
 }
-
 void printPeople(PEOPLE p) {
     printf("#%02d %s %-3s %-18s %-3d %-25s %-6s \n",
         p.tag, p.dataRegistered, p.feePaid, p.name, p.age, p.organization, p.job);
 }
-
 void setupArray(PEOPLE peoples[]) {
     FILE* file = fopen("C:\\test\\registration_data.txt", "r");
     if (file == NULL) {
@@ -70,7 +67,6 @@ void setupArray(PEOPLE peoples[]) {
     fclose(file);
     printf("Setup Array succesful. \n\n");
 }
-
 void setupLL(NODE* head, PEOPLE peoples[]) {
     int i = 0;
     NODE* ptemp;
