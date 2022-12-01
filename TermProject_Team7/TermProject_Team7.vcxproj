@@ -133,6 +133,7 @@
     <ClCompile Include="create_LL_for_sortedData.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="dataSetup.c" />
     <ClCompile Include="delete_choi.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -158,7 +159,7 @@
   <ItemGroup>
     <ClInclude Include="compare_with_checksum.h" />
     <ClInclude Include="create_LL_for_sortedData.h" />
-    <ClInclude Include="data_structure.h" />
+    <ClInclude Include="dataSetup.h" />
     <ClInclude Include="delete_choi.h" />
     <ClInclude Include="insert_paik.h" />
     <ClInclude Include="search_choi.h" />
