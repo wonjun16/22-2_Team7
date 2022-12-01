@@ -23,12 +23,10 @@ typedef struct node {
 
 }NODE;
 
-node* head = NULL;
-
 struct node* create_Node(PEOPLE* people) {
-    node* newNode = NULL;
+    NODE* newNode = NULL;
 
-    newNode = (node*)malloc(sizeof(node));
+    newNode = (NODE*)malloc(sizeof(NODE));
     if (newNode) {
         newNode->next = NULL;
 
@@ -52,7 +50,7 @@ void printPeople(PEOPLE p) {
 }
 
 void setupArray(PEOPLE peoples[]) {
-    FILE* file = fopen("C:\\test\\registraion_data.txt", "r");
+    FILE* file = fopen("C:\\test\\registration_data.txt", "r");
     if (file == NULL) {
         printf("[ERROR] Failed to open. \n");
         exit(1);
@@ -91,27 +89,18 @@ void setupLL(NODE* head, PEOPLE peoples[]) {
         }
     }
     printf(">>Creating linked list successful.\n");
-    NODE* ptr = head->next;
-    while (ptr) //testing all node is correctly made.
-    {
-        printPeople(ptr->people);
-        ptr = ptr->next;
-    }
+    //NODE* ptr = head->next;
+    //while (ptr) //testing all node is correctly made.
+    //{
+    //    printPeople(ptr->people);
+    //    ptr = ptr->next;
+    //}
 }
 
-//----main
-int main() {
-    PEOPLE peoples[100];
-    setupArray(peoples);
-
-    NODE* head = (NODE*)malloc(sizeof(NODE));
-    head->next = NULL;
-    setupLL(head, peoples);
-
-
+void deleteLL(NODE* head) {
     NODE* nptr = head->next, * prev = head;
     while (nptr) {
-        free(prev);
+        free(nptr);
         prev = nptr;
         nptr = nptr->next;
     }
