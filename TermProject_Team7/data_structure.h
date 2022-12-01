@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,12 +22,12 @@ typedef struct node {
 
 }NODE;
 
-node* head = NULL;
+NODE* head = NULL;
 
 struct node* create_Node(PEOPLE* people) {
-    node* newNode = NULL;
+    NODE* newNode = NULL;
 
-    newNode = (node*)malloc(sizeof(node));
+    newNode = (NODE*)malloc(sizeof(NODE));
     if (newNode) {
         newNode->next = NULL;
 
@@ -45,12 +44,10 @@ struct node* create_Node(PEOPLE* people) {
 
     return newNode;
 }
-
 void printPeople(PEOPLE p) {
     printf("#%02d %s %-3s %-18s %-3d %-25s %-6s \n",
         p.tag, p.dataRegistered, p.feePaid, p.name, p.age, p.organization, p.job);
 }
-
 void setupArray(PEOPLE peoples[]) {
     FILE* file = fopen("C:\\test\\registraion_data.txt", "r");
     if (file == NULL) {
@@ -72,7 +69,6 @@ void setupArray(PEOPLE peoples[]) {
     fclose(file);
     printf("Setup Array succesful. \n\n");
 }
-
 void setupLL(NODE* head, PEOPLE peoples[]) {
     int i = 0;
     NODE* ptemp;
@@ -99,6 +95,7 @@ void setupLL(NODE* head, PEOPLE peoples[]) {
     }
 }
 
+
 //----main
 int main() {
     PEOPLE peoples[100];
@@ -107,7 +104,6 @@ int main() {
     NODE* head = (NODE*)malloc(sizeof(NODE));
     head->next = NULL;
     setupLL(head, peoples);
-
 
     NODE* nptr = head->next, * prev = head;
     while (nptr) {
