@@ -152,6 +152,7 @@
     <ClCompile Include="sort_tag_order.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="write_sorted_data.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_LL_for_sortedData.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="search_gachon.h" />
     <ClInclude Include="sort_for_groupOrder.h" />
     <ClInclude Include="sort_tag_order.h" />
+    <ClInclude Include="write_sorted_data.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
