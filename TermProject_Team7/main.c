@@ -5,7 +5,7 @@ void main() {
 	setupArray(peoples);
 	
 	NODE* head = create_Node(peoples);
-	setupLL(head, peoples);
+	setupLL(head, peoples, 30);
 
 	deleteLL(head);
 }

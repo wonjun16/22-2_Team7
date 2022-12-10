@@ -20,10 +20,29 @@ struct node* create_Node(PEOPLE* people) {
 
     return newNode;
 }
+
 void printPeople(PEOPLE p) {
     printf("#%02d %s %-3s %-18s %-3d %-25s %-6s \n",
         p.tag, p.dataRegistered, p.feePaid, p.name, p.age, p.organization, p.job);
 }
+
+void printArray(PEOPLE people[], int size) {
+    for (int i = 0; i < size; i++) {
+        printPeople(people[i]);
+    }
+}
+
+void printLL(NODE* head) {
+    NODE* ptr = head->next;
+
+    	while (ptr)
+   	{
+   		printPeople(ptr->people);
+        ptr = ptr->next;
+   	}
+
+}
+
 void setupArray(PEOPLE peoples[]) {
     FILE* file = fopen("C:\\test\\registration_data.txt", "r");
     if (file == NULL) {
@@ -45,34 +64,29 @@ void setupArray(PEOPLE peoples[]) {
     fclose(file);
     printf("Setup Array succesful. \n\n");
 }
-void setupLL(NODE* head, PEOPLE peoples[]) {
+
+void setupLL(NODE* head, PEOPLE peoples[], int size) {
     int i = 0;
     NODE* ptemp;
     NODE* newnode = (NODE*)malloc(sizeof(NODE));
     head->next = newnode;
     newnode->people = peoples[0];
-    for (i = 0; i < 30 - 1; i++)
+    for (i = 0; i < size - 1; i++)
     {
         ptemp = newnode;
         newnode = (NODE*)malloc(sizeof(NODE));
         newnode->people = peoples[i + 1]; //save members's value to newnode->member.
         ptemp->next = newnode;   //link previous node with new node.
-        if (i == 30 - 2)
+        if (i == size - 2)
         {
             newnode->next = NULL;   //next of final node is NULL.
         }
     }
     printf(">>Creating linked list successful.\n");
-    NODE* ptr = head->next;
-    while (ptr) //testing all node is correctly made.
-    {
-        printPeople(ptr->people);
-        ptr = ptr->next;
-    }
 }
 
-void deleteLL(NODE* head) {
-    NODE* nptr = head->next, * prev = head;
+void deleteLL(NODE** head) {
+    NODE* nptr = (*head)->next, * prev = *head;
     while (nptr) {
         free(nptr);
         prev = nptr;

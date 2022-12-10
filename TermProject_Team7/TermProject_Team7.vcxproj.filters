@@ -39,18 +39,12 @@
     <ClCompile Include="insert_paik.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="compare_with_checksum.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="dataSetup.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dataSetup.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="compare_with_checksum.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="create_LL_for_sortedData.h">

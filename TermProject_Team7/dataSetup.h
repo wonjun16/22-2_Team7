@@ -26,6 +26,8 @@ typedef struct node {
 
 struct node* create_Node(PEOPLE* people);
 void printPeople(PEOPLE p);
+void printArray(PEOPLE people[], int size);
+void printLL(NODE* head);
 void setupArray(PEOPLE peoples[]);
 void setupLL(NODE* head, PEOPLE peoples[]);
 void deleteLL(NODE* head);
