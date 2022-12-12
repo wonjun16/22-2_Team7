@@ -4,7 +4,6 @@
 #include "sort_for_groupOrder.h"
 
 void sort_for_groupOrder(PEOPLE peoples[]) {
-
     PEOPLE hold;
 
     for (int i = 0; i < 30; i++) {
@@ -17,5 +16,6 @@ void sort_for_groupOrder(PEOPLE peoples[]) {
             hold = peoples[i];
             peoples[i] = peoples[smallest];
             peoples[smallest] = hold;
+            printPeople(peoples[i]);
     }
 }

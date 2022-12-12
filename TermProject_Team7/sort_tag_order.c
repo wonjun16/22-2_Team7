@@ -4,7 +4,6 @@
 #include "sort_tag_order.h"
 
 void sort_tag_order(PEOPLE peoples[]) {
-
     PEOPLE temp;
 
     for (int i = 0; i < 29; i++) {
@@ -17,4 +16,5 @@ void sort_tag_order(PEOPLE peoples[]) {
             }
         }
     }
+    printArray(peoples, 30);
 }
