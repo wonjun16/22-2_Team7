@@ -41,7 +41,7 @@ void printPeople(PEOPLE p) {
 /*store the data in structure*/
 void setupArray(PEOPLE peoples[]) {
     /*read the text file*/
-    FILE* file = fopen("C:\\test\\registraion_data.txt", "r");
+    FILE* file = fopen("C:\\test\\registration_data.txt", "r");
     if (file == NULL) {
         printf("[ERROR] Failed to open. \n");
         exit(1);
@@ -60,7 +60,6 @@ void setupArray(PEOPLE peoples[]) {
         strcpy(p->job, strtok(NULL, "\n"));
     }
     fclose(file);
-    printf("Setup Array succesful. \n");
 }
 
 /*store the data in linked list*/
@@ -81,7 +80,6 @@ void setupLinkedList(NODE* head, PEOPLE peoples[], int size) {
             newnode->next = NULL;   //next of final node is NULL.
         }
     }
-    printf("Creating linked list successful.\n");
 }
 
 //fuction for update 
@@ -89,6 +87,8 @@ void printArray(PEOPLE people[], int size) {
     for (int i = 0; i < size; i++) {
         printPeople(people[i]);
     }
+
+    printf("\n");
 }
 
 void printLL(NODE* head) {
@@ -100,6 +100,7 @@ void printLL(NODE* head) {
         ptr = ptr->next;
     }
 
+    printf("\n");
 }
 
 //reset the LinkedList
@@ -107,11 +108,8 @@ void deleteLL(NODE** head) {
 
     NODE* nptr = (*head)->next, * prev = *head;
     while (nptr) {
-        free(nptr);
+        free(prev);
         prev = nptr;
         nptr = nptr->next;
     }
 }
-
-
-

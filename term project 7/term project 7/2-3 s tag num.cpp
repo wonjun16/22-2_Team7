@@ -23,13 +23,4 @@ void sortTagOrder(PEOPLE peoples[]) {
             }
         }
     }
-
-    printf("Sorted by tag number Succesful. \n");
-
-    //check the code is working
-    for (int i = 0; i < 30; i++) {
-        printPeople(peoples[i]);
-    }
-
-    printf("\n");
 }

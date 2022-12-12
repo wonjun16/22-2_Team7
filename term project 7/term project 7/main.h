@@ -44,17 +44,16 @@ void sortGroupOrder(PEOPLE peoples[]);
 //2-6. create txt file
 void write_sorted_data(PEOPLE peoples[]);
 
-//setup for update
+//print , delete data
 void printArray(PEOPLE people[], int size);
 void printLL(NODE* head);
 void deleteLL(NODE** head);
 
 //delete choi 
-//void deleteAt(PEOPLE people[], int index, int size);
-//void delete_choi_array(PEOPLE people[], int* size);
-//void delete_choi_LL(NODE** head);
+void deleteAt(PEOPLE people[], int index, int size);
+void delete_choi_array(PEOPLE people[], int* size);
+void delete_choi_LL(NODE** head);
 
 //insert paik
-//void insert_paik_array(PEOPLE data, PEOPLE people[], int size);
-//void insert_paik_LL(NODE** head, PEOPLE data);
-
+void insert_paik_array(PEOPLE data, PEOPLE people[], int size);
+void insert_paik_LL(NODE** head, PEOPLE data);

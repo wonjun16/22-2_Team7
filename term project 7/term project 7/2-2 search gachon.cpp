@@ -16,7 +16,7 @@ in the linked list
 void searchGachonArray(PEOPLE* people) {
     printf("Search Gachon University using Array \n");
     int i = 0;
-    while (i < 100) {
+    while (i < 30) {
         if (strcmp((people + i)->organization, "Gachon University") == NULL) { //if organization is 'gachon university', data output
             printPeople(*(people + i));
         }
