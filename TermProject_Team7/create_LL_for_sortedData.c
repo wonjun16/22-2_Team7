@@ -1,60 +1,21 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "create_LL_for_sortedData.h"
+#include "sort_tag_order.h"
 
-typedef struct data {
+void create_LL_for_sortedData(PEOPLE peoples[]) {
+    PEOPLE temp;
 
-    int tag;   //registration number-unique integer
-    char dataRegistered[20];   //yyyy-mm-dd
-    char feePaid[10];   //"yes" or "no"
-    char name[25];   //char[25]
-    int age;   //integer
-    char organization[30];   //company or university; char[30]
-    char job[15];   //student, professor, staff, executive, engineer, marketer; char[15]
-
-} PEOPLE;
-
-typedef struct node {
-
-    PEOPLE people;
-    struct node* next;
-
-}NODE;
-
-void setupArray(PEOPLE peoples[]) {
-    FILE* file = fopen("C:\\test\\registration_data.txt", "r");
-    if (file == NULL) {
-        printf("[ERROR] Failed to open. \n");
-        exit(1);
+    for (int i = 0; i < 29; i++) {
+        for (int j = 0; j < 29; j++) {
+            if (peoples[j].tag > peoples[j + 1].tag) { // Use bubble sort 
+                // swap
+                temp = peoples[j];
+                peoples[j] = peoples[j + 1];
+                peoples[j + 1] = temp;
+            }
+        }
     }
-    char str[100];
-    PEOPLE* p = NULL;
-    for (int i = 0; fgets(str, 100, file) != NULL; i++) {
-        p = &peoples[i];
-        p->tag = atoi(strtok(str, "/"));
-        strcpy(p->dataRegistered, strtok(NULL, "/"));
-        strcpy(p->feePaid, strtok(NULL, "/"));
-        strcpy(p->name, strtok(NULL, "/"));
-        p->age = atoi(strtok(NULL, "/"));
-        strcpy(p->organization, strtok(NULL, "/"));
-        strcpy(p->job, strtok(NULL, "\n"));
-    }
-    fclose(file);
-    printf("Setup Array succesful. \n\n");
-}
 
-int main(void) {
-    node* ptr = node* head;
-    node* new = NULL;
-
-    for (int i = 0; i < 30; i++)
-    {
-        new = (NODE*)malloc(sizeof(NODE));
-        new->people = people[i];
-
-        ptr->next = new;
-        ptr = new;
-    }
-    new->next = NULL;
+    NODE* head = create_Node(peoples);
+    setupLL(head, peoples, 30);
+    printLL(head);
 }
